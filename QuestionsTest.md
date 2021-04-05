@@ -71,6 +71,8 @@ sentences.find(str)
 ```
 
 ## 7. Can you explain how dependency injection helps when writing unit tests?
+No, I don't have the habit to work writing unit test. Usually I test my code by the traditional way, running the software trying all possibilities can be done. I took this bad habit when I learnt programming for video games. Using Django I use a couple times doing a simple test, to understand it how to code it. Then I don't know how dependency injection can help, because I don't have deep knowledge writing unit test. So, I considere that I should work more writing unit test for get deep experience to understand it and have opportunity to answer this question on secure way and trusting with myself on my answer.
+But I can image it, that help faciliting structure code into the object or structre code that need to test. Like a kind of controller between the object or code and the view of the test. Similar that the design of MCV. Where the Controller help to represent the model into the view.
 
 ## 8. Give an example of how you would use defensive programming techniques (otherthan to sanitise user input).
 
