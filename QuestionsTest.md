@@ -87,6 +87,8 @@ For small libraries that would be using when is building the files of a project,
 Otherwise is when we are going to run the software in a container (virtualization) or virtual machine that is hosting the software with the source and the built files. Because as we share to the container or the virtual machine. Will not generate any problem.
 
 ## 10. When would you use fully-normalised form, and when would you use JSONcolumns?
+I am not sure, but I think they are related with the normalization of a data base. So, I think that fully-normalised form are the form to input that into a normalized data base.
+I am not really sure, but I think that JSON columns is used when is needed to insert an JSON string into a table of data base. To input structured data into a table that expect and unstructured data.
 
 ## 11. When would you use a stored procedure and why?
 
