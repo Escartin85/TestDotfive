@@ -91,6 +91,7 @@ I am not sure, but I think they are related with the normalization of a data bas
 I am not really sure, but I think that JSON columns is used when is needed to insert an JSON string into a table of data base. To input structured data into a table that expect and unstructured data.
 
 ## 11. When would you use a stored procedure and why?
+To save SQL statements to re use it. Like to have a repository of query code inside our database.
 
 ## 12. When is it inadvisable to rely upon ORM?
 
