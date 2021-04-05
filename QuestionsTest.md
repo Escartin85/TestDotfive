@@ -19,6 +19,17 @@ Lambda is a function with not name, also called anonymous function.
 Promise, I don't know I didn't use it, or I don't remember used it.
 
 ## 4. Explain logic short-circuiting, and how it can affect the code you write.
+A short-circuiting is instruction that in programming language is using Booleans operations.
+Where the second argument or instruction is executed or evaluated just when the first argument is executed or evaluated.
+Usually short-circuiting are expressions using Boolean operators as: &&, ||, AND, OR, XOR...
+But also short-circuiting acts or occurs when on statements request for Boolean instruction or statement, like this example:
+
+'''python
+isActivated = True
+if (isActivated): # boolean instruction or short-circuiting
+    then statements
+    
+'''
 
 ## 5. What are your thoughts on composition versus inheritance?
 
