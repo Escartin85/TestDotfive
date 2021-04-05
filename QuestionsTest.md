@@ -13,6 +13,10 @@ On OOP the data is mutable and uses object and methods, and interactive using lo
 And on Functional Programming the data is not mutable and uses functions and variables, and to interactive uses recursion. So in resum it uses function evaluation. An Example of an instruction on SQL.
 
 ## 3. What is the difference between a closure, a callback, a lambda, and a promise?
+Closure is a function that start and end in the same environment where is defined.
+Callback is a function that eventually get called back. For that reason it has been defined as "call back".
+Lambda is a function with not name, also called anonymous function.
+Promise, I don't know I didn't use it, or I don't remember used it.
 
 ## 4. Explain logic short-circuiting, and how it can affect the code you write.
 
