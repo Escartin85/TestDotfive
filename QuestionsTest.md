@@ -75,6 +75,11 @@ No, I don't have the habit to work writing unit test. Usually I test my code by 
 But I can image it, that help faciliting structure code into the object or structre code that need to test. Like a kind of controller between the object or code and the view of the test. Similar that the design of MCV. Where the Controller help to represent the model into the view.
 
 ## 8. Give an example of how you would use defensive programming techniques (otherthan to sanitise user input).
+Well, sanitise or double check the user input is the first that a beginner programmer learn programming. Once times that the developer realize the software can be broken (run a bug while is in execution) once times is decided to input a data that is not expected to be input. Like try to input number in a string's field (string variable).
+
+I considere that the second technique that a developer learn is to check "nulls" or null data. If a variable is declarated but it is not created or assigned any value and is pretending to use it. The program will crash in execution.
+Then a good practice is to check nulls or if the variable are nulls, before to manage them.
+This can allow the developer to manage an error controlled.
 
 ## 9. Do you think it is good or bad to commit “built” files? (E.g. the output of SCSS, etc.)Explain why.
 
