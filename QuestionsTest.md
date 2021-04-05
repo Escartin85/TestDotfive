@@ -97,6 +97,35 @@ To save SQL statements to re use it. Like to have a repository of query code ins
 I don't know, I'm not sure. ORM is used to map tables structures into objects, to handle database data as objects. To facilitate searching and filtering of data, with object-oriented programming. So, logically, it would be inadvisable to trust when it will not be necessary to map the tables of a database into objects. I suppose this would be when trying to map a large data of tables, it would not be advisable to rely on ORM. Because maybe it slows down the process, or saturates the memory when it comes to mapping a large amount of data. So it would be more optimized to search and filter data through a direct SQL statement to the database.
 
 ## 13. What was the most useful feature that was added to the latest version of your chosen language? Please include a snippet of code that shows how you've used it.
+The last useful feature that I have used is "async/await" or called asyncio. It is implemented from Python 3.5 and I have used it in recently personal project, programming a cryto-trading bot.
+In a few word asyncio is a kind of threathing for network process or request managed in a specific lood desinged to work smoothly and with flow data.
+When a client software does a request via http, the client create a process where request specific data from a server.
+By default the process that does the request, doesn't finish until the server respond the request. And when the client receive and process the respond, then is when the software running in the client pass to the next process. The time of the respond depends of many factor like the size of the respond, the lantecy of the transmission, etc.
+Then if we need to implement a software or part of code where is needed to does many request on the same time without depending that each request required be finished to pass to the next request, is when "asyncio" works to make this administration with flow simulating a kind of multi-threading of request.
+
+In my case I used it to develop a part of bot. This bot is requesting data from 2 or more exchanges of cryptocurrencies. And then compare the value of each cryptocurrency of this 2 exchanges.
+Then, let me explain how asyncio works using this example.
+The software request the data from one exchange. And usually the respond comes in 4 seconds. Then, let's say that for any reason the respond from the server is cut or more long than expected; for example let's say 2 min. Then using the traditional use of the process, the request of the data from the second exchange will start 2 min after started the request of the first one.
+
+Using asyncio it will force to the software to do basically both request on the same time. Or in other words, a request or to initialize a request will not depends directly from the respond on time of other resquest.
+With this code it can allow the bot to received data from both exchanges practicaly at the same time. Making more accurate the time to compare price of same pairs of coins, in a similar faction of time.
+The next code is not exactly what I used, but it represent approximately what I did or used.
+
+```python
+import asyncio
+
+async def check_pair():
+    result_exchange_A = await exchangeA()
+    result_exchange_B = await exchangeB()
+    
+async def main():
+    await check_pair()
+
+if __name__ == '__main__':
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(main())
+    loop.close()
+```
 
 ## 14. What is your preferred approach to responsive design?
 
