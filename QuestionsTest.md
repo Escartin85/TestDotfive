@@ -82,6 +82,9 @@ Then a good practice is to check nulls or if the variable are nulls, before to m
 This can allow the developer to manage an error controlled.
 
 ## 9. Do you think it is good or bad to commit “built” files? (E.g. the output of SCSS, etc.)Explain why.
+It is not the end of the world, but it is not good idea. It is good idea when we want to share everything. Or allow to download all inside the project. But generally, is not good idea because the "built" files have been created and optimized in an specific hardware and software. Then the best practice is to re-built this files for each machine where will run it.
+For small libraries that would be using when is building the files of a project, may be is doesn't make issuse working. But when there are big libraries and combined with them. The best practice is to re-built to optimize it.
+Otherwise is when we are going to run the software in a container (virtualization) or virtual machine that is hosting the software with the source and the built files. Because as we share to the container or the virtual machine. Will not generate any problem.
 
 ## 10. When would you use fully-normalised form, and when would you use JSONcolumns?
 
