@@ -8,6 +8,9 @@ In the case of a++. first is used the variable then increse the value.
 
 
 ## 2. Can you explain what you consider to be the key differences between object-oriented programming and functional programming?
+The key difference between both is how they work and interactive with the data. 
+On OOP the data is mutable and uses object and methods, and interactive using loops. So in resum it uses concept of object. An example of an instruction from Class Object in C++.
+And on Functional Programming the data is not mutable and uses functions and variables, and to interactive uses recursion. So in resum it uses function evaluation. An Example of an instruction on SQL.
 
 ## 3. What is the difference between a closure, a callback, a lambda, and a promise?
 
