@@ -128,6 +128,17 @@ if __name__ == '__main__':
 ```
 
 ## 14. What is your preferred approach to responsive design?
+Go back to 90s or 2000 year?? 15 years ago was the best era. When someone didn't need to care about to shot his mind.
+When developer just did care about one solution, full size. Or an size inside the range of the usual resolution used.
+What happened? Arrived the iphone/ipad era. The first devices with different screen's size and different resolutions.
+Who has developed an software at the init of this era, may be can understand the headaches of multi-resulions.
+Today by today this technique and the tecnology involved to manage the technique has been upgrade allowing to develop a software or website ready to delivery in any device, making a quickly road map.
+Today there are so many diferent resolutions. And seems that each year appear new ones. And this will be continue meanwhile the screens are in evolution.
+Then In my opinion I think that is essential to work with responsive design. Because If a product can't be load in an specific device, it means that there are potential lost of customers or users can't use the product.
+For develop websites and with some specific libraries that works with vectorial draws, the responsive design is an easy task to manage it. That happens with all frameworks for work on responsive design for websites. Even working with pure images, RGB files or BMP files is a easy task using website frameworks. 
+But when is working with BMP files and there is not a framework or library that re-scale automatically can be tedious. Because we will manage manually the scalation of the graphics. This is more usually when is developing video games based on BMP files. Like 2D video games. Because for each resolution we will manage manually the load of different size of each image. And previously we will design and export in different sizes, for each resolution. Plus probably we will need to manage manually the position of graphic for each resolution and size of screen.
+
+So, concluding. Responsive design is necesary. But depending of the develop can be more or less confortable and/or easy.
 
 ## 15. Please describe yourself using JSON.
 
