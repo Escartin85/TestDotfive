@@ -142,7 +142,5 @@ So, concluding. Responsive design is necesary. But depending of the develop can 
 
 ## 15. Please describe yourself using JSON.
 I am not an expert using JSON, but I can define myself using JSON making a comparation with practice surf.
+I feel good on the sea, estable on the tableboard. I am not an expert using JSON, but I can define myself using JSON making a comparation with practice surf.
 I feel good on the sea, estable on the tableboard. But I feel that I have to continue surfing waves to get better experience.
-
-
-
