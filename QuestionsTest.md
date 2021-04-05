@@ -24,14 +24,28 @@ Where the second argument or instruction is executed or evaluated just when the 
 Usually short-circuiting are expressions using Boolean operators as: &&, ||, AND, OR, XOR...
 But also short-circuiting acts or occurs when on statements request for Boolean instruction or statement, like this example:
 
-'''python
+```python
 isActivated = True
 if (isActivated): # boolean instruction or short-circuiting
     then statements
     
-'''
+```
 
 ## 5. What are your thoughts on composition versus inheritance?
+Inheritance == "is a"; then Composition == "has a".
+Inheritance is a class inherit that use the fields or variables and methods of its superclass. A class
+can inherit from other class or inherit from many classes at the same time, and this superclasses even can inheret from
+other superclass. Also can be subclasses that can override methods and/or fields to alter the behavior, creating a new inherit class. But this implementation can be done too using composition.
+Composition is when in a field's class is defined as object of other class, allowing to extend the functionality of the class. 
+Then, when I used inheritance is when I was sure that the initial desing of the structure's class is not going to make a big changes in the future. I have use inheritance like to implement an interface. And when I needed to extend a functionality of this interface I have use composition. Because if for any reason the code of any superclasss has to be change in fuction of the big structured designed can be more or less tedious. Then when I am not sure from the beginning that an inherit could be needed more functionalities in the future, I consider that implementing the code using composition can be more confortable and more easy to manage new modifications.
+
+I going to give and example:
+A car is a vehicle. A class vehicle has some many objects like wheels and other parts. This objects will be fields of the class car. And then the car would be a subclass of vehicle. If its need to add functionalities. Just we have to add objects as fields and add this functionalities in the classes of that objects (like wheels).
+This allow to work with a modulation. Then that modulation could reuse for quickly and easily. As to creating a new vehicle, a motorbike. Then the motorbike can reuse functionalities of the wheels class just adding the object wheel as field inside the motorbike class. This example is using composition.
+
+But if in this example is decided to create a superclass vehicle and then an inherited class called car, that inherit from vehicle and others class from each part of the car. If in the future is decided to modify the wheel class would make issues or work modiying the car's class. Basically because the pilars or base of the vehicle class are the others classes from where inherit. And in this example as more up we go in the inheritance to do a change, it would be more tedious to manage the subclasses. Because in subclasses we should manage and work a big change that affects all the subclasses form the inheritance.
+
+Developing classes the important stage is at the beginning, when we should plan and design a good architecture to facility the future work.
 
 ## 6. How would you choose between using a regular expression, a parser, or a simple string search? Give examples.
 
