@@ -48,6 +48,27 @@ But if in this example is decided to create a superclass vehicle and then an inh
 Developing classes the important stage is at the beginning, when we should plan and design a good architecture to facility the future work.
 
 ## 6. How would you choose between using a regular expression, a parser, or a simple string search? Give examples.
+I would use a regular expresion when I want to match specific requirements of an string. Like to validate if a string contains only lower characters 'a to z'.
+
+```python
+re.findall('[a-z]+', 'javierE')
+```
+
+A Parser to convert a data into a required format. As when we want to convert an integer data into a string variable.
+
+```python
+int a = 11
+string number = ''
+number = str(a)
+```
+
+A simple string search when we want to know if a string contains a string.
+
+```python
+sentences = "Javier is good boy"
+str = "goo"
+sentences.find(str)
+```
 
 ## 7. Can you explain how dependency injection helps when writing unit tests?
 
