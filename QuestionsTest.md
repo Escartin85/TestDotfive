@@ -94,6 +94,7 @@ I am not really sure, but I think that JSON columns is used when is needed to in
 To save SQL statements to re use it. Like to have a repository of query code inside our database.
 
 ## 12. When is it inadvisable to rely upon ORM?
+I don't know, I'm not sure. ORM is used to map tables structures into objects, to handle database data as objects. To facilitate searching and filtering of data, with object-oriented programming. So, logically, it would be inadvisable to trust when it will not be necessary to map the tables of a database into objects. I suppose this would be when trying to map a large data of tables, it would not be advisable to rely on ORM. Because maybe it slows down the process, or saturates the memory when it comes to mapping a large amount of data. So it would be more optimized to search and filter data through a direct SQL statement to the database.
 
 ## 13. What was the most useful feature that was added to the latest version of your chosen language? Please include a snippet of code that shows how you've used it.
 
