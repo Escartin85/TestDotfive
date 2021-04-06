@@ -1,36 +1,46 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
 
 # Create your views here.
 # View for Home Page
 def home_page(request):
 
-    data = ''
     context_data = {
-        "formWorker": data,
         "Title": "Home",
     }
 
-    #return render(request, "index.html", context_data)
-    return redirect('loginPage')
+    return render(request, "index.html", context_data)
 
 # View for Login Page
 def login_page(request):
-    data = ''
-    context_data = {
-        "formWorker": data,
-        "Title": "Home",
-    }
+    if request.user.is_authenticated:
+        return redirect('itemList')
+    else:
+        if request.method == 'POST':
+            username = request.POST.get('username')
+            password =request.POST.get('password')
+
+            user = authenticate(request, username=username, password=password)
+
+            if user is not None:
+                login(request, user)
+                return redirect('itemList')
+            else:
+                messages.info(request, 'Username OR Password is incorrect')
+
+    context_data = {}
 
     return render(request, "accounts/login.html", context_data)
 
 # View for Register Page
 def register_page(request):
-    data = ''
-    return redirect('loginPage')
+    context_data = {}
+    return render(request, "accounts/register.html", context_data)
 
 # View for Logout Page
 def logout_page(request):
-    data = ''
+    logout(request)
     return redirect('loginPage')
     
 # View for Logout

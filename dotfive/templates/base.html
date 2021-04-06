@@ -1,0 +1,96 @@
+{% load static %}
+<!--DOCTYPE html -->
+<!DOCTYPE html>
+<html>
+	<head>
+	{% block head %}
+		{% block meta %}
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    		<!-- Meta, title, CSS, favicons, etc. -->
+    		<meta charset="utf-8">
+    		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    		<meta name="viewport" content="width=device-width, initial-scale=1">
+    		<meta name="description" content="">
+    		<meta name="author" content="">
+		{% endblock meta %}
+
+		<title>Dotfive Challenge | {% block head_title %}{% endblock head_title %}</title>
+
+
+		{% block stylesheets %}
+			<!-- Bootstrap -->
+			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+            <!-- Custom Theme Style -->
+		    <link rel="stylesheet" type="text/css" href='{% static "/build/css/login.css"%}'>
+
+		{% endblock stylesheets %}
+
+		
+		{% block head_extra %}
+		{% endblock head_extra %}
+	{% endblock head %}
+	</head>
+
+	<body class="{% block body_class %}nav-md {% endblock body_class %}">
+		<div class="container body">
+    		<div class="main_container">
+
+                {% block sidebar %} 
+				    <div class="col-md-3 left_col {% block sidebar_class %} {% endblock sidebar_class %}">
+						{% include "accounts/sidebar.html" %}
+				    </div>
+                {% endblock sidebar %}
+
+				<div class="right_col" role="main">
+					<div class="">
+						<div class="page-title">
+                            {% block messages %}
+                                {% include "accounts/messages_display.html" %}
+                            {% endblock messages %}
+							
+							<div class="title_left">
+								{% block body_content_title_left %}
+									<h3>
+									Content <small>Content</small>
+									</h3>
+								{% endblock body_content_title_left %}
+							</div>
+							<div class="title_right">
+								{% block body_content_title_right %}
+								{% endblock body_content_title_right %}
+							</div>
+						</div>
+
+						<div class="clearfix"></div>
+						<div class="row">
+							{% block body_content %}
+							{% endblock body_content %}
+						</div>
+					</div>
+				</div>
+
+				<footer>
+					{% include "accounts/footer.html" %}
+				</footer>
+
+			</div>
+		</div>
+
+		{% block javascripts %}
+			<!-- Bootstraop -->
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+			<!-- jQuery -->
+			<script
+			  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
+			  integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
+			  crossorigin="anonymous"></script>
+
+	        <!-- jQuery autocomplete -->
+	        <!-- Custom Theme Scripts -->
+      		<!--  <script src="/static/build/js/custom.js"></script> -->
+		{% endblock javascripts %}
+		{% block javascripts_extra %}
+		{% endblock javascripts_extra %}
+	</body>
+</html>
