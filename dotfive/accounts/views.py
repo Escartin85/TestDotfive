@@ -36,8 +36,23 @@ def login_page(request):
 
 # View for Register Page
 def register_page(request):
-    context_data = {}
-    return render(request, "accounts/register.html", context_data)
+    if request.user.is_authenticated:
+        return redirect('homePage')
+    else:
+        newUserForm = CreateNewUserForm()
+        if request.method == 'POST':
+            newUserForm = CreateNewUserForm(request.POST)
+            if newUserForm.is_valid():
+                newUserForm.save()
+                user = newUserForm.cleaned_data.get('username')
+                messages.success(request, 'New Account was created for ' + user)
+
+                return redirect('loginPage')    
+               
+        context_data = {
+            'newUserForm':newUserForm
+            }
+        return render(request, "accounts/register.html", context_data)
 
 # View for Logout Page
 def logout_page(request):

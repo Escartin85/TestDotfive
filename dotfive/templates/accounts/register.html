@@ -1,0 +1,119 @@
+{% load static %}
+<!--DOCTYPE html -->
+<!DOCTYPE html>
+<html>
+	<head>
+	{% block head %}
+		{% block meta %}
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    		<!-- Meta, title, CSS, favicons, etc. -->
+    		<meta charset="utf-8">
+    		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    		<meta name="viewport" content="width=device-width, initial-scale=1">
+    		<meta name="description" content="">
+    		<meta name="author" content="">
+		{% endblock meta %}
+
+		<title> Dotfive Challenge | {% block head_title %} Login {% endblock head_title %}</title>
+
+
+		{% block stylesheets %}
+			<!-- Bootstrap -->
+			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+            <!-- Custom Theme Style -->
+		    <link rel="stylesheet" type="text/css" href='{% static "css/login.css" %}'>
+
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+		{% endblock stylesheets %}
+
+
+	{% endblock head %}
+	</head>
+    <body class="{% block body_class %}nav-md {% endblock body_class %}">
+        <div class="main_container">
+            <div class="container-fluid">
+                <div class="main_container">
+                    <div class="row box_login">
+                    </div>
+                    <div class="row box_login">
+                        <div class="col">
+                        
+                        </div>
+                        <div class="col">
+                            <div class="user_card">
+                                <div class="d-flex justify-content-center">
+                                    <h3 id="form-title">REGISTER ACCOUNT</h3>
+                                </div>
+                                <div class="d-flex justify-content-center form_container">
+                
+                                    <form method="POST" action="">
+                                        {% csrf_token %}
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                            </div>
+                                            {{newUserForm.username}}
+                                        </div>
+                                        <div class="input-group mb-2">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
+                                            </div>
+                                            {{newUserForm.email}}
+                                        </div>
+                                        <div class="input-group mb-2">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                            </div>
+                                            {{newUserForm.password1}}
+                                        </div>
+                                        <div class="input-group mb-2">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                            </div>
+                                            {{newUserForm.password2}}
+                                        </div>
+                
+                
+                
+                                           <div class="d-flex justify-content-center mt-3 login_container">
+                                             <input class="btn login_btn" type="submit" value="Register Account">
+                                           </div>
+                
+                                    </form>
+                                </div>
+                
+                                {{newUserForm.errors}}
+                                
+                                <div class="mt-4">
+                                    <div class="d-flex justify-content-center links">
+                                        Already have an account? <a href="{% url 'loginPage' %}" class="ml-2">Login</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                        
+                        </div>
+                    </div>
+                    <div class="row box_login">
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <!-- Bootstraop -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" 
+            crossorigin="anonymous">
+    </script>
+
+    <!-- jQuery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
+      integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
+      crossorigin="anonymous">
+    </script>
+
+    </body>
+</html>
