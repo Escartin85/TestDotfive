@@ -31,63 +31,78 @@
 	{% endblock head %}
 	</head>
     <body class="{% block body_class %}nav-md {% endblock body_class %}">
-		<div class="container body">
-    		<div class="main_container">
-                <div class="row">
-                    <div class="user_card">
-                        <div class="d-flex justify-content-center">
-                            <h3 id="form-title">LOGIN</h3>
+        <div class="main_container">
+            <div class="container-fluid">
+                <div class="main_container">
+                    <div class="row box_login">
+                    </div>
+                    <div class="row box_login">
+                        <div class="col">
+                        
                         </div>
-                        <div class="d-flex justify-content-center form_container">
-                            <form method="POST" action="">
-                                {% csrf_token %}
-                                <div class="input-group mb-3">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                    </div>
-                    
-                                    <input type="text" name="username" placeholder="Username..." class="form-control">
+                        <div class="col">
+                            <div class="user_card">
+                                <div class="d-flex justify-content-center">
+                                    <h3 id="form-title">LOGIN</h3>
                                 </div>
-                    
-                                <div class="input-group mb-2">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
-                                    </div>
-                    
-                                        <input type="password" name="password" placeholder="Password..." class="form-control" >
+                                <div class="d-flex justify-content-center form_container">
+                                    <form method="POST" action="">
+                                        {% csrf_token %}
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                            </div>
+                            
+                                            <input type="text" name="username" placeholder="Username..." class="form-control">
+                                        </div>
+                            
+                                        <div class="input-group mb-2">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                            </div>
+                            
+                                                <input type="password" name="password" placeholder="Password..." class="form-control" >
+                                        </div>
+                            
+                                            <div class="d-flex justify-content-center mt-3 login_container">
+                                                <input class="btn login_btn" type="submit" value="Login">
+                                            </div>
+                                    </form>
                                 </div>
-                    
-                                    <div class="d-flex justify-content-center mt-3 login_container">
-                                        <input class="btn login_btn" type="submit" value="Login">
+                            
+                                {% for message in messages %}
+                                    <p id="messages">{{message}}</p>
+                                {% endfor %}			
+                            
+                                <div class="mt-4">
+                                    <div class="d-flex justify-content-center links">
+                                        Don't have an account? <a href="{% url 'registerPage' %}" class="ml-2">Sign Up</a>
                                     </div>
-                            </form>
-                        </div>
-                    
-                        {% for message in messages %}
-                            <p id="messages">{{message}}</p>
-                        {% endfor %}			
-                    
-                        <div class="mt-4">
-                            <div class="d-flex justify-content-center links">
-                                Don't have an account? <a href="{% url 'registerPage' %}" class="ml-2">Sign Up</a>
+                                </div>
                             </div>
                         </div>
+                        <div class="col">
+                        
+                        </div>
+                    </div>
+                    <div class="row box_login">
                     </div>
                 </div>
             </div>
         </div>
-        <footer>
-            {% include "accounts/footer.html" %}
-        </footer>
     
     <!-- Bootstraop -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" 
+            crossorigin="anonymous">
+    </script>
 
     <!-- jQuery -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
       integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous">
+    </script>
 
     </body>
 </html>

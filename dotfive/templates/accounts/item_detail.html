@@ -1,0 +1,66 @@
+{% extends "../base.html" %}
+
+{% block head_title %} {{Title}} {% endblock head_title %}
+
+{% block body_content %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+	<div class="x_panel">
+		<div class="x_title">
+			<h2 class="title_form">  {{ Title }} </h2>
+			<ul class="dataTable_buttons">
+				<li>
+					<button class="btn btn-dark bg-red" type="button" onclick="window.location.href=' {{ item.get_url_delete }} '">Delete</button>	
+				</li>
+			</ul>
+			<div class="clearfix"></div>
+		</div>
+		<!-- Content panel -->
+		<div class="x_content">
+			<div class="col-sm-12">
+				<!--Label-->
+				<p>
+					<div class="fieldOutput">
+						<div class="labelText"> <b>Label:</b> </div>
+						<div class="outputText">{{ item.label }}</div>
+					</div>
+				</p>
+				<!--Slug-->
+				<p>
+					<div class="fieldOutput">
+						<div class="labelText"> <b>Slug:</b> </div>
+						<div class="outputText">{{ item.slug }} </div>
+					</div>
+				</p>
+                <!--Category-->
+                <p>
+					<div class="fieldOutput">
+						<div class="labelText"> <b>Category:</b> </div>
+						<div class="outputText">{{ item.category }} </div>
+					</div>
+				</p>
+                <!--Date Created-->
+                <p>
+					<div class="fieldOutput">
+						<div class="labelText"> <b>Date Created:</b> </div>
+						<div class="outputText">{{ item.date_created }} </div>
+					</div>
+				</p>
+			</div>
+			<div class="clearfix"></div>
+			<ul class="dataTable_buttons_bottom_left">
+				<li>
+					<button class="btn btn-blue" type="button" onclick="window.location.href='/account/item/create'">Add New Item</button>	
+				</li>
+			</ul>
+			<ul class="dataTable_buttons_bottom_right">
+				<li>
+					<button class="btn btn-dark bg-blue" type="button" onclick="window.location.href=' {{ item.get_url_edit }} '">Edit</button>	
+				</li>
+				<li>
+					<button class="btn btn-dark bg-green" type="button" onclick="window.location.href=' /account/item '">Acept</button>	
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+{% endblock body_content %}

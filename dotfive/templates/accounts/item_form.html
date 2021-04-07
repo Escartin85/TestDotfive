@@ -1,0 +1,64 @@
+{% extends "../base.html" %}
+
+{% block head_title %} 
+	{{Title}} 
+{% endblock head_title %}
+
+<!-- Page title -->
+{% block head_extra %}
+	{{ itemForm.media }}
+{% endblock head_extra %}
+
+{% block body_content_title_left %}
+	
+{% endblock body_content_title_left %}
+
+{% block body_content %}
+<div class="col-md-12 col-sm-12 col-xs-12">
+	<div class="x_panel">
+		<div class="x_title">
+			<h2 class="title_form"> {% if instance %} Edit {% else %} New {% endif %}Item</h2>
+			<div class="clearfix"></div>
+		</div>
+		<!-- Content panel -->
+		<div class="x_content">
+			<div class="col-sm-12">
+				<form method="POST" action="" enctype="multipart/form-data">{% csrf_token %}
+					<!-- Label -->
+					<div class="field">
+			            <label for="label">Label:</label>
+			            {{ itemForm.label }}
+			            {% if itemForm.label.errors %}
+			            	{% for error in itemForm.label.errors %}
+					            <strong>{{ error }}</strong>
+					        {% endfor %}
+			            {% endif %}
+					</div>
+					<!-- Category -->
+					<div class="field">
+			            <label for="category">Category:</label>
+			            {{ itemForm.category }}
+			            {% if itemForm.category.errors %}
+			            	{% for error in itemForm.category.errors %}
+					            <strong>{{ error }}</strong>
+					        {% endfor %}
+			            {% endif %} 
+					</div>
+
+					<div class="btnForm">
+						<ul class="dataTable_buttons">
+							<li>
+								{% if instance %} 
+									<input type="submit" value='Edit Item' class="btn btn-blue" />
+								{% else %} 
+									<input type="submit" value='Add Item' class="btn btn-blue"/>
+								{% endif %}	
+							</li>
+						</ul>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock body_content %}
